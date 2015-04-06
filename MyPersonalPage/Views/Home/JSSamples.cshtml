@@ -344,7 +344,8 @@ function armNum(num) {
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Max of Five</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>Enter 5 numbers. Click the 'Max of 5' button to dispaly the highest number.</p>
                     <input type="number" id="firstNum" min="1" max="100" value="1" /><br><br>
                     <input type="number" id="secondNum" min="1" max="100" value="2" /><br><br>
@@ -368,6 +369,7 @@ $("#result").text("The Highest number is: "+highNum);
 }
                     </pre>
                 </div>
+                </div>
                 <div class="modal-footer no-margin">
                 </div>
             </div>
@@ -387,7 +389,8 @@ $("#result").text("The Highest number is: "+highNum);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Add Five Numbers</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>Enter 5 numbers. Click the Add button to dispaly their sum.</p>
                     <input type="number" id="firstNuma" min="1" max="100" value="1" /><br><br>
                     <input type="number" id="secondNuma" min="1" max="100" value="2" /><br><br>
@@ -410,6 +413,7 @@ $("#resulta").text("The sum is "+mySum);
 }
 				</pre>
                 </div>
+                </div>
                 <div class="modal-footer no-margin">
                 </div>
             </div>
@@ -429,20 +433,21 @@ $("#resulta").text("The sum is "+mySum);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Multiply</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>Accept 5 numbers from the user. The multiply() dispalys their product.</p>
-                    <input type="number" id="firstNumm" min="1" max="10" value="1" /><br><br>
-                    <input type="number" id="secondNumm" min="1" max="10" value="2" /><br><br>
-                    <input type="number" id="thirdNumm" min="1" max="10" value="3" /><br><br>
-                    <input type="number" id="fourthNumm" min="1" max="10" value="4" /><br><br>
-                    <input type="number" id="fifthNumm" min="1" max="10" value="5" /><br><br>
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>Accept 5 numbers from the user. The multiply() dispalys their product.</p>
+                        <input type="number" id="firstNumm" min="1" max="10" value="1" /><br><br>
+                        <input type="number" id="secondNumm" min="1" max="10" value="2" /><br><br>
+                        <input type="number" id="thirdNumm" min="1" max="10" value="3" /><br><br>
+                        <input type="number" id="fourthNumm" min="1" max="10" value="4" /><br><br>
+                        <input type="number" id="fifthNumm" min="1" max="10" value="5" /><br><br>
 
-                    <input type="submit" value="Multiply" onclick="prepToMul();" />
-                    <span id="resultm"> </span>
+                        <input type="submit" value="Multiply" onclick="prepToMul();" />
+                        <span id="resultm"> </span>
 
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function multiply() {
 var myProduct = 1;
 for(i in arguments) {
@@ -451,6 +456,7 @@ for(i in arguments) {
 $("#resultm").text("The Product is: "+myProduct);
 }
 				</pre>
+                    </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -471,18 +477,19 @@ $("#resultm").text("The Product is: "+myProduct);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Factorial</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>
-                        The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.<br>
-                        Enter a number and click the 'Factorial' button to calculate the factorial.
-                    </p>
-                    <input type="number" id="firstNumf" min="1" max="20" value="1" required /><br><br>
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>
+                            The factorial of a non-negative integer n is the product of all positive integers less than or equal to n.<br>
+                            Enter a number and click the 'Factorial' button to calculate the factorial.
+                        </p>
+                        <input type="number" id="firstNumf" min="1" max="20" value="1" required /><br><br>
 
-                    <input type="submit" value="Factorial" onclick="prepFact();" />
-                    <span id="resultf"> </span>
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                        <input type="submit" value="Factorial" onclick="prepFact();" />
+                        <span id="resultf"> </span>
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function factorial(num) {
 var factrl = 1;
 if(num < 1) {
@@ -495,6 +502,7 @@ for (i=num; i>1; i--) {
 $("#resultf").text("The factorial is: "+factrl);
 }
 				</pre>
+                    </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -515,27 +523,29 @@ $("#resultf").text("The factorial is: "+factrl);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Palindrome</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>
-                        A Palindrome is a string which is the same forwards and backwards, 'radar', for example.
-                        Enter a string and check if it is a palindrome.
-                    </p>
-                    <input type="text" id="myText" required="required" placeholder="radar" /><br><br>
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>
+                            A Palindrome is a string which is the same forwards and backwards, 'radar', for example.
+                            Enter a string and check if it is a palindrome.
+                        </p>
+                        <input type="text" id="myText" required="required" placeholder="radar" /><br><br>
 
-                    <input type="submit" value="Check" onclick="prepPal();" />
-                    <span id="resultp"> </span>
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                        <input type="submit" value="Check" onclick="prepPal();" />
+                        <span id="resultp"> </span>
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function palindrome(str) {
 for (a=0, b=str.length-1; a<str.length; a++,b--) {
-if(str.charAt(a) !== str.charAt(b)) {
+if(str.charat(a) != =str.charAt(b)) {
 return false;
 }
 }
 return true;
 }
                     </pre>
+                    </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -556,33 +566,35 @@ return true;
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Fizz Buzz</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>
-                        This program iterates the integers from 1 to 100, printing the numbers to the screen. <br>
-                        However, for each number that is a multiple of 3, "Fizz" is printed instead of the number.<br>
-                        For multiples of 5 "Buzz" is printed instead of the number. <br>
-                        For numbers that are multiples of both 3 and 5 "FizzBuzz" is printed to the screen. <br>
-                    </p>
-                    <input type="submit" value="Try Fizz Buzz" onclick="fizzBuzz();" />
-                    <span id="resultfb"> </span>
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>
+                            This program iterates the integers from 1 to 100, printing the numbers to the screen. <br>
+                            However, for each number that is a multiple of 3, "Fizz" is printed instead of the number.<br>
+                            For multiples of 5 "Buzz" is printed instead of the number. <br>
+                            For numbers that are multiples of both 3 and 5 "FizzBuzz" is printed to the screen. <br>
+                        </p>
+                        <input type="submit" value="Try Fizz Buzz" onclick="fizzBuzz();" />
+                        <span id="resultfb"> </span>
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function fizzBuzz() {
 $("#resultfb").text("   1 to 100 : ");
 for (i=1; i<101; i++) {
-if ( i%3 === 0 && i%5 === 0) {
-$("#resultfb").append(" fizzbuzz,");
-} else if (i%3 === 0) {
-$("#resultfb").append(" fizz,");
-} else if (i%5 === 0) {
-$("#resultfb").append(" buzz,");
-} else {
-$("#resultfb").append(" "+i+" ,");
-}
-}
-}
+                 if ( i%3= = =0 && i%5= = =0) {
+                 $("#resultfb").append(" fizzbuzz,");
+                 } else if (i%3= = =0) {
+                 $("#resultfb").append(" fizz,");
+                 } else if (i%5= = =0) {
+                 $("#resultfb").append(" buzz,");
+                 } else {
+                 $("#resultfb").append(" "+i+" ,");
+                 }
+                 }
+                 }
 				</pre>
+                    </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -602,7 +614,8 @@ $("#resultfb").append(" "+i+" ,");
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Perfect Numbers</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>
                         In number theory, a perfect number is a positive integer that is equal to the sum of its proper positive divisors, <br>
                         that is, the sum of its positive divisors excluding the number itself.<br>
@@ -613,8 +626,8 @@ $("#resultfb").append(" "+i+" ,");
                     <input type="submit" value="Check" onclick="perfectNum();" />
                     <span id="resultper"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function perfectNum(num) {
 var divisors = [];
 var j=0;
@@ -631,7 +644,9 @@ if(sum === num){
 } else {
 	return false;
 }
-}			</pre>
+}			
+            </pre>
+               </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -651,17 +666,18 @@ if(sum === num){
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Display Perfect Numbers</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>Click the display button to see a list of perfect numbers between 1 and 10,000.<br></p>
-                    <input type="submit" value="Display" onclick="dispPerfectNum();" />
-                    <span id="resultdp"> </span>
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
-function perfectNum(num) {
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>Click the display button to see a list of perfect numbers between 1 and 10,000.<br></p>
+                        <input type="submit" value="Display" onclick="dispPerfectNum();" />
+                        <span id="resultdp"> </span>
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
+function perfectNum1(num) {
 var divisors = [];
 var j=0;
-for (i=1; i<num; i++) { // collecting divisors in an array
+for (i=1; i<num; i++) { />/ collecting divisors in an array
 	if(num%i === 0) {
 		divisors[j]=i;
 		j++;
@@ -674,8 +690,9 @@ if(sum === num){
 } else {
 	return false;
 }
-}
+}	
 				</pre>
+                </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -695,7 +712,8 @@ if(sum === num){
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Happy Numbers</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>
                         Happy numbers are those that can be reduced to 1 through the following process : <br>
                         Start with any positive integer, replace the number with the sum of the sqaure of it's digits,
@@ -706,8 +724,8 @@ if(sum === num){
                     <input type="submit" value="Display" onclick="dispHappyNum();" />
                     <span id="resulth"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function happyNum(num) {
 var sum;
 var sumAray=[];
@@ -722,12 +740,12 @@ for (j in aray) {
 sum+=aray[j];
 aray[j]=0;
 }
-if (sum === 1) {
+if (sum= = =1) {
 sumAray.length=0;
 return true;
 } else {
 for (k in sumAray) {
-if (sum === sumAray[k]){
+if (sum= = =sumAray[k]){
 sumAray.length=0;
 return false;
 }
@@ -738,6 +756,7 @@ num=sum;
 }
 }
                 </pre>
+                </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -757,7 +776,8 @@ num=sum;
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Armstrong Numbers</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>
                         An Armstrong number is an integer such that the sum of the cubes of its digits is equal to the number itself.<br>
                         Click the button to find all 3-digit Armstrong Numbers.
@@ -765,23 +785,27 @@ num=sum;
                     <input type="submit" value="Find" onclick="dispArmNum();" />
                     <span id="resultarm"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function armNum(num) {
-var aray = [];
-var str = num.toString();
-for (i=0; i<str.length; i++) { />/ cube of each digit
-aray[i] = Math.pow(parseInt(str.charAt(i)),3);
-}
-var sum = aray.reduce(function (a, b) { return a + b; });
 	
-if (sum === num) {
-	return true;
-} else {
-	return false;
-}
-}
+	var aray = [];
+	var str = num.toString();
+	
+	for (i=0; i<str.length; i++) { />/ cube of each digit
+		aray[i] = Math.pow(parseInt(str.charAt(i)),3);
+	}
+	var sum = aray.reduce(function (a, b) { return a + b; });
+	
+	
+	if (sum === num) {
+		return true;
+	} else {
+		return false;
+	}
+	}
 				</pre>
+                </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -801,13 +825,14 @@ if (sum === num) {
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Longest Word</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>Find the longest word in a selected file.</p><br>
                     <input type="file" id="fileinput" />
                     <span id="res"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function findLongestWord(evt) {
 var f = evt.target.files[0];
 if (f) {
@@ -829,6 +854,7 @@ $("#res").text("Failed to load file");
 $("#fileinput").change(findLongestWord);
 				</pre>
                 </div>
+                </div>
                 <div class="modal-footer no-margin">
                 </div>
             </div>
@@ -847,7 +873,8 @@ $("#fileinput").change(findLongestWord);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Filter Long Words</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>Find and display all words that are longer than a given number in a selected text file.</p><br>
                     <p>Enter the number : </p>
                     <input type="number" id="numlw" min="1" max="30" required />
@@ -855,8 +882,8 @@ $("#fileinput").change(findLongestWord);
                     <input type="file" id="fileinput1" />
                     <span id="reslw"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function filterLongWords(evt) {
 var f = evt.target.files[0];
 if (f) {
@@ -895,6 +922,7 @@ $("#reslw").text(" failed to load file");
 $("#fileinput").change(filterLongWords);
     			</pre>
                 </div>
+                </div>
                 <div class="modal-footer no-margin">
                 </div>
             </div>
@@ -913,14 +941,15 @@ $("#fileinput").change(filterLongWords);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Word Frequency</h1>
                 </div>
-                <div class="modal-body col-sm-5">
+                <div class="modal-body">
+                <div class="col-sm-5">
                     <p>Display a frequency listing of the words in a selected text file. Order the words by frequency.</p><br>
                     <p>Select the file : </p>
                     <input type="file" id="fileinput2" />
                     <span id="res2"> </span>
                 </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function wordFreq(evt) {
 var f = evt.target.files[0];
 if (f) {
@@ -960,6 +989,7 @@ $("#res2").text("failed to load file");
 $("#fileinput2").change(wordfreq);
 				</pre>
                 </div>
+                </div>
                 <div class="modal-footer no-margin">
                 </div>
             </div>
@@ -978,16 +1008,17 @@ $("#fileinput2").change(wordfreq);
                     </button>
                     <h1 class="modal-title" id="myModalLabel">Find Word</h1>
                 </div>
-                <div class="modal-body col-sm-5">
-                    <p>Display the total number of occurances of a given word in a selected file.</p><br>
-                    <p>Enter the word : </p>
-                    <input type="text" id="myWord" required="required" placeholder="sample" />
-                    <p>Select the file : </p>
-                    <input type="file" id="fileinput3" />
-                    <span id="res3"> </span>
-                </div>
-                <div class="col-sm-7 margin-small">
-                    <pre class="brush: js text">
+                <div class="modal-body">
+                    <div class="col-sm-5">
+                        <p>Display the total number of occurances of a given word in a selected file.</p><br>
+                        <p>Enter the word : </p>
+                        <input type="text" id="myWord" required="required" placeholder="sample" />
+                        <p>Select the file : </p>
+                        <input type="file" id="fileinput3" />
+                        <span id="res3"> </span>
+                    </div>
+                    <div class="col-sm-7 margin-small">
+                        <pre class="brush: js text">
 function findWord(evt) {
 var f = evt.target.files[0]; 
 if (f) {
@@ -1012,6 +1043,7 @@ $("#res3").text(" failed to load file");
 $("#fileinput3").change(findword);
 				
                            </pre>
+                    </div>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
