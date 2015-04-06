@@ -1,0 +1,9 @@
+﻿div .descr{
+    display: none;
+}
+
+a:hover + div {
+    display: block;
+} 
+
+.top-buffer { margin-top:20px; }

@@ -221,12 +221,14 @@
     <Content Include="css\meflat-red.css" />
     <Content Include="css\meflat-yellow-orange.css" />
     <Content Include="css\meflat-yellow.css" />
+    <Content Include="css\my.css" />
     <Content Include="css\style-switcher.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Icon.png" />
+    <None Include="Properties\PublishProfiles\rmanglani.pubxml" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -275,6 +277,51 @@
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
+    <Content Include="SynHi\scripts\shAutoloader.js" />
+    <Content Include="SynHi\scripts\shBrushAppleScript.js" />
+    <Content Include="SynHi\scripts\shBrushAS3.js" />
+    <Content Include="SynHi\scripts\shBrushBash.js" />
+    <Content Include="SynHi\scripts\shBrushColdFusion.js" />
+    <Content Include="SynHi\scripts\shBrushCpp.js" />
+    <Content Include="SynHi\scripts\shBrushCSharp.js" />
+    <Content Include="SynHi\scripts\shBrushCss.js" />
+    <Content Include="SynHi\scripts\shBrushDelphi.js" />
+    <Content Include="SynHi\scripts\shBrushDiff.js" />
+    <Content Include="SynHi\scripts\shBrushErlang.js" />
+    <Content Include="SynHi\scripts\shBrushGroovy.js" />
+    <Content Include="SynHi\scripts\shBrushJava.js" />
+    <Content Include="SynHi\scripts\shBrushJavaFX.js" />
+    <Content Include="SynHi\scripts\shBrushJScript.js" />
+    <Content Include="SynHi\scripts\shBrushPerl.js" />
+    <Content Include="SynHi\scripts\shBrushPhp.js" />
+    <Content Include="SynHi\scripts\shBrushPlain.js" />
+    <Content Include="SynHi\scripts\shBrushPowerShell.js" />
+    <Content Include="SynHi\scripts\shBrushPython.js" />
+    <Content Include="SynHi\scripts\shBrushRuby.js" />
+    <Content Include="SynHi\scripts\shBrushSass.js" />
+    <Content Include="SynHi\scripts\shBrushScala.js" />
+    <Content Include="SynHi\scripts\shBrushSql.js" />
+    <Content Include="SynHi\scripts\shBrushVb.js" />
+    <Content Include="SynHi\scripts\shBrushXml.js" />
+    <Content Include="SynHi\scripts\shCore.js" />
+    <Content Include="SynHi\scripts\shLegacy.js" />
+    <Content Include="SynHi\styles\shCore.css" />
+    <Content Include="SynHi\styles\shCoreDefault.css" />
+    <Content Include="SynHi\styles\shCoreDjango.css" />
+    <Content Include="SynHi\styles\shCoreEclipse.css" />
+    <Content Include="SynHi\styles\shCoreEmacs.css" />
+    <Content Include="SynHi\styles\shCoreFadeToGrey.css" />
+    <Content Include="SynHi\styles\shCoreMDUltra.css" />
+    <Content Include="SynHi\styles\shCoreMidnight.css" />
+    <Content Include="SynHi\styles\shCoreRDark.css" />
+    <Content Include="SynHi\styles\shThemeDefault.css" />
+    <Content Include="SynHi\styles\shThemeDjango.css" />
+    <Content Include="SynHi\styles\shThemeEclipse.css" />
+    <Content Include="SynHi\styles\shThemeEmacs.css" />
+    <Content Include="SynHi\styles\shThemeFadeToGrey.css" />
+    <Content Include="SynHi\styles\shThemeMDUltra.css" />
+    <Content Include="SynHi\styles\shThemeMidnight.css" />
+    <Content Include="SynHi\styles\shThemeRDark.css" />
     <Content Include="Views\Home\About.cshtml">
       <SubType>Code</SubType>
     </Content>
