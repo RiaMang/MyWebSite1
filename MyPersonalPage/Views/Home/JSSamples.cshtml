@@ -2,7 +2,7 @@
    
     <script type="text/javascript">
      SyntaxHighlighter.all()
-	 <!-- MAX OF FIVE -->
+	/* <!-- MAX OF FIVE -->*/
 	function prep5() {
 	var num1 = parseInt(document.getElementById('firstNum').value);
 	var num2 = parseInt(document.getElementById('secondNum').value);
@@ -15,16 +15,16 @@
 	function maxOf5() {
 	var highNum=arguments[0];
 	var tempNum=0;
-		for(i=1; i<arguments.length; i++) {
+    for(i in arguments) {
 		tempNum = arguments[i];
 		highNum = highNum > tempNum?  highNum : tempNum;
 	}
 	$("#result").text("The Highest number is: "+highNum);
 	}
-	 <!-- END 'MAX OF FIVE' -->
+	 /*<!-- END 'MAX OF FIVE' -->
 
 
-	 <!-- ADD ------------>
+	 <!-- ADD ------------>*/
 	 function prepSum() {
 		var num1 = parseInt(document.getElementById('firstNuma').value);
 		var num2 = parseInt(document.getElementById('secondNuma').value);
@@ -35,16 +35,17 @@
 	}
 
 	function add() {
-	var mySum = 0;
-	for(i=0; i<arguments.length; i++) {
+	    var mySum = 0;
+        
+	for(i in arguments) {
 		mySum+=arguments[i];
 	}
 	$("#resulta").text("The sum is "+mySum);
 	}
 
-	 <!---END 'ADD' -------->
+	/* <!---END 'ADD' -------->
 
-	 <!-----MULTIPLY ----->
+	 <!-----MULTIPLY ----->*/
 	function prepToMul() {
 		var num1 = parseInt(document.getElementById('firstNumm').value);
 		var num2 = parseInt(document.getElementById('secondNumm').value);
@@ -61,9 +62,9 @@
 		}
 	$("#resultm").text("The Product is: "+myProduct);
 	}
-	 <!-----END MULTIPLY-->
+	/* <!-----END MULTIPLY-->
 
-	<!--------FACTORIAL --->
+	<!--------FACTORIAL --->*/
 	function prepFact() {
 		var num1 = parseInt(document.getElementById('firstNumf').value);
 		factorial(num1);
@@ -80,9 +81,9 @@
 		}
 		$("#resultf").text("The factorial is: "+factrl);
 	}
-	<!-------END FACTORIAL --->
+	/*<!-------END FACTORIAL --->
 
-	<!----PALINDROME--->
+	<!----PALINDROME--->*/
 	function prepPal() {
 		var myStr = document.getElementById('myText').value;
 		if (myStr.length === 0) {
@@ -105,9 +106,9 @@
 	}
 	return true;
 	}
-	<!---END PALINDROME--->
+	/*<!---END PALINDROME--->
 
-	<!------ FIZZ BUZZ ------>
+	<!------ FIZZ BUZZ ------>*/
 	function fizzBuzz() {
 	$("#resultfb").text("   1 to 100 : ");
 	for (i=1; i<101; i++) {
@@ -122,9 +123,9 @@
 		}
 	}
 	}
-	<!------END FIZZ BUZZ ----->
+	/*<!------END FIZZ BUZZ ----->
 
-	<!------ PERFECT NUMBER ----->
+	<!------ PERFECT NUMBER ----->*/
 function perfectNum() {
 	var num = parseInt(document.getElementById('firstNump').value);
 	if(num < 1) {
@@ -139,19 +140,17 @@ function perfectNum() {
 		j++;
 		}
 	}
-	var sum=0;
-	for (i=0; i<divisors.length; i++) {
-		sum+=divisors[i];
-	}
+	var sum=divisors.reduce(function(a,b){ return a+b;});
+	
 	if(sum === num){
 		$("#resultper").text(num+" is a perfect number");
 	} else {
 		$("#resultper").text(num+" is not a perfect number");
 	}
 }
-	<!------ END PERFECT NUMBER ----->
+	/*<!------ END PERFECT NUMBER ----->
 
-	<!-----DISPLAY PERFECT NUMBERS  ----->
+	<!-----DISPLAY PERFECT NUMBERS  ----->*/
 	function dispPerfectNum(){
 		var status = false;
 		for (ctr=1; ctr < 10000; ctr++) {
@@ -173,7 +172,7 @@ function perfectNum() {
 			}
 		}
 		var sum=0;
-		for (i=0; i<divisors.length; i++) { //adding the divisors
+		for (i in divisors) { //adding the divisors
 			sum+=divisors[i];
 		}
 		if(sum === num){
@@ -182,16 +181,15 @@ function perfectNum() {
 			return false;
 		}
 	}
-	<!-----DISPLAY PERFECT NUMBERS ----->
+	/*<!-----DISPLAY PERFECT NUMBERS ----->
 
-	<!-----HAPPY NUMBERS ---->
+	<!-----HAPPY NUMBERS ---->*/
 	function dispHappyNum(){
 		var status = false;
 		for (hCtr=1,ctr=1; hCtr < 6 ; ctr++) {
 			status = happyNum(ctr);
 			if (status === true) {
 				$("#resulth").append(" "+ctr+",");
-				//document.write("<br /> "+ctr);
 				status=false;
 				hCtr++;
 			}
@@ -209,9 +207,9 @@ function perfectNum() {
 	sum = 0;
 
 	for (i=0; i<str.length; i++) {
-		aray[i] = parseInt(str.charAt(i)) * parseInt(str.charAt(i));
+		aray[i] = Math.pow(parseInt(str.charAt(i)),2);
 	}
-	for (j=0; j<aray.length; j++)	{
+	for (j in aray)	{
 		sum+=aray[j];
 		aray[j]=0;
 	}
@@ -219,20 +217,20 @@ function perfectNum() {
 		sumAray.length=0;
 		return true;
 	} else {
-		for (k=0; k<sumAray.length; k++) {
+		for (k in sumAray) {
 			if (sum === sumAray[k]){
 				sumAray.length=0;
 				return false;
 			}
 		}
-	sumAray[sumAray.length]=sum;
+		sumAray.push(sum);
 	num=sum;
 	}
 	}
 	}
-	<!-----END HAPPY NUMBERS ---->
+	/*<!-----END HAPPY NUMBERS ---->
 
-	<!-----ARMSTRONG NUMBERS ---->
+	<!-----ARMSTRONG NUMBERS ---->*/
 function dispArmNum(){
 	var status = false;
 	for (ctr=100; ctr < 1000 ; ctr++) {
@@ -245,23 +243,23 @@ function dispArmNum(){
 }
 
 function armNum(num) {
-	var sum=0;
+	
 	var aray = [];
 	var str = num.toString();
+	
 	for (i=0; i<str.length; i++) { // cube of each digit
-		aray[i] = parseInt(str.charAt(i)) * parseInt(str.charAt(i)) * parseInt(str.charAt(i));
-		}
-	for (j=0; j<aray.length; j++)	{ //sum of cubes of all digits
-		sum+=aray[j];
-		aray[j]=0;
+		aray[i] = Math.pow(parseInt(str.charAt(i)),3);
 	}
+	var sum = aray.reduce(function (a, b) { return a + b; });
+	
+	
 	if (sum === num) {
 		return true;
 	} else {
 		return false;
 	}
 	}
-	<!-----END ARMSTRONG NUMBERS ---->
+	/*<!-----END ARMSTRONG NUMBERS ---->*/
 
 </script>    
  
@@ -362,12 +360,12 @@ function armNum(num) {
 function maxOf5() {
 var highNum=arguments[0];
 var tempNum=0;
-for(i=1; i<arguments.length; i++) {
+for(i in arguments) {
 tempNum = arguments[i];
 highNum = highNum > tempNum?  highNum : tempNum;
 }
 $("#result").text("The Highest number is: "+highNum);
-} 
+}
                     </pre>
                 </div>
                 <div class="modal-footer no-margin">
@@ -404,10 +402,11 @@ $("#result").text("The Highest number is: "+highNum);
                     <pre class="brush: js text">
 function add() {
 var mySum = 0;
-for(i=0; i<arguments.length; i++) {
-mysum+=arguments[i];
+       
+for(i in arguments) {
+mySum+=arguments[i];
 }
-$("#resulta").text("the sum is "+mySum);
+$("#resulta").text("The sum is "+mySum);
 }
 				</pre>
                 </div>
@@ -530,7 +529,7 @@ $("#resultf").text("The factorial is: "+factrl);
                     <pre class="brush: js text">
 function palindrome(str) {
 for (a=0, b=str.length-1; a<str.length; a++,b--) {
-if(str.charat(a) !== str.charAt(b)) {
+if(str.charAt(a) !== str.charAt(b)) {
 return false;
 }
 }
@@ -616,31 +615,23 @@ $("#resultfb").append(" "+i+" ,");
                 </div>
                 <div class="col-sm-7 margin-small">
                     <pre class="brush: js text">
-function perfectNum() {
-var num = parseInt(document.getElementById('firstNump').value);
-if(num < 1) {
-$("#resultper").text("The number must be a positive integer");
-return;
-}
+function perfectNum(num) {
 var divisors = [];
 var j=0;
-for(i=1; i<num; i++){
-if(num%i === 0){
-divisors[j]=i;
-j++;
+for (i=1; i<num; i++) { />/ collecting divisors in an array
+	if(num%i === 0) {
+		divisors[j]=i;
+		j++;
+	}
 }
-}
-var sum = 0;
-for(i=0; i<divisors.length; i++){
-sum+=divisors[i];
+var sum=divisors.reduce(function(a,b){return a + b;});
 }
 if(sum === num){
-$("#resultper").text(num+" is a perfect number.");
+	return true;
 } else {
-$("#resultper").text(num+" is not a perfect number");
+	return false;
 }
-}
-				</pre>
+}			</pre>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -676,9 +667,7 @@ for (i=1; i<num; i++) { // collecting divisors in an array
 		j++;
 	}
 }
-var sum=0;
-for (i=0; i<divisors.length; i++) { //adding the divisors
-	sum+=divisors[i];
+var sum=divisors.reduce(function(a,b){return a + b;});
 }
 if(sum === num){
 	return true;
@@ -727,9 +716,9 @@ while (true) {
 var str = num.toString();
 sum = 0;
 for (i=0; i<str.length; i++) {
-aray[i]=parseInt(str.charAt(i)) * parseInt(str.charat(i));
+aray[i]=Math.pow(parseInt(str.charAt(i)),2);
 }
-for (j=0; j<aray.length; j++)	{
+for (j in aray) {
 sum+=aray[j];
 aray[j]=0;
 }
@@ -737,18 +726,18 @@ if (sum === 1) {
 sumAray.length=0;
 return true;
 } else {
-for (k=0; k<sumAray.length; k++) {
+for (k in sumAray) {
 if (sum === sumAray[k]){
 sumAray.length=0;
 return false;
 }
 }
-sumAray[sumAray.length]=sum;
+sumAray.push(sum);
 num=sum;
 }
 }
 }
-				</pre>
+                </pre>
                 </div>
                 <div class="modal-footer no-margin">
                 </div>
@@ -779,16 +768,13 @@ num=sum;
                 <div class="col-sm-7 margin-small">
                     <pre class="brush: js text">
 function armNum(num) {
-var sum=0;
 var aray = [];
 var str = num.toString();
 for (i=0; i<str.length; i++) { />/ cube of each digit
-	aray[i] = parseInt(str.charAt(i)) * parseInt(str.charAt(i)) * parseInt(str.charAt(i));
-	}
-for (j=0; j<aray.length; j++) { />/sum of cubes of all digits
-	sum+=aray[j];
-	aray[j]=0;
+aray[i] = Math.pow(parseInt(str.charAt(i)),3);
 }
+var sum = aray.reduce(function (a, b) { return a + b; });
+	
 if (sum === num) {
 	return true;
 } else {
@@ -828,11 +814,10 @@ if (f) {
 var r = new FileReader();
 r.onload = function(e) {
 var fileContent=r.result;
-var wordArr=[];
+var wordArr=fileContent.split(/[\s,()']+/);
 var big=" ";
-wordArr=fileContent.split(/[\s,()']+/);
-for (i=0;i<wordarr.length; i++) {
-big=wordArr[i].length> big.length ? wordArr[i]:big;
+for (i in wordArr) {
+big=wordArr[i].length > big.length ? wordArr[i]:big;
 }
 $("#res").text("The longest word in '"+f.name+"' is '"+big+"'.");
 }
@@ -865,7 +850,7 @@ $("#fileinput").change(findLongestWord);
                 <div class="modal-body col-sm-5">
                     <p>Find and display all words that are longer than a given number in a selected text file.</p><br>
                     <p>Enter the number : </p>
-                    <input type="number" id="numlw" min="1" max="5" required />
+                    <input type="number" id="numlw" min="1" max="30" required />
                     <p>Select the file : </p>
                     <input type="file" id="fileinput1" />
                     <span id="reslw"> </span>
@@ -883,22 +868,23 @@ wordArr=fileContent.split(/[\s,()']+/);
 var bigArr = [];
 var chk = false;
 var num = document.getElementById('numlw').value;
-for (i=0;i<wordarr.length; i++) {
+for (i in wordArr) {
 if (wordArr[i].length > num) {
 chk=false;
-for (j=0; j<bigarr.length; j++) {
-if (wordarr[i] === bigArr[j]) {
-chk=true;
+for (j in bigArr) {
+if (wordArr[i] === bigArr[j]) {
+chk = true;
 }
 }
 if (chk === false) {
-bigArr[bigArr.length]=wordArr[i];
+bigArr.push(wordArr[i]);
 }
 }
 }
-$("#reslw").text("the words longer than "+num+" are "
-for (j=0; j<bigarr.length; j++) {
-$("#reslw").append(bigArr[j]));
+	
+$("#reslw").text("The words longer than "+num+" are ");
+for (j in bigArr) {
+$("#reslw").append(bigArr[j]+", ");
 }
 }
 r.readAsText(f);
@@ -906,7 +892,7 @@ else {
 $("#reslw").text(" failed to load file");
 }
 }
-$("#fileinput").change(filterlongwords);
+$("#fileinput").change(filterLongWords);
     			</pre>
                 </div>
                 <div class="modal-footer no-margin">
@@ -941,36 +927,30 @@ if (f) {
 var r = new FileReader();
 r.onload = function(e) {
 var fileContent=r.result;
-var wordArr=[];
-wordArr=fileContent.split(/[\s,()']+/);
-var uniqueArr = [];
-var chk = false;
-for (i=0;i<wordArr.length; i++) { //creating a unique array
-chk=false;
-for (j=0; j<uniqueArr.length; j++) {
-if (wordArr[i] === uniqueArr[j]) {
-chk=true;
+var wordArr=fileContent.split(/[\s,()']+/);
+var wordDict = {}
+for(var i in wordArr)
+{
+if( wordDict[ wordArr[i] ] )
+wordDict[ wordArr[i] ]++;
+else
+wordDict[ wordArr[i] ] = 1;
 }
+wordArr = [];
+for(var key in wordDict)
+{
+wordArr.push({ word: key, count: wordDict[key] })
 }
-if (chk === false) {
-uniqueArr[uniqueArr.length]=wordArr[i];
-}
-}
-var objarr=[];
-for (k=0; k<uniqueArr.length; k++) { // attaching a counter too each unique word.
-var ctr=0;
-for (l=0; l<wordArr.length; l++) {
-if(uniqueArr[k] === wordArr[l]) {
-ctr++;
-}
-}
-objArr.push({no: ctr, name:uniqueArr[k]})
-}
-objArr = objArr.sort(function(a,b){ return a.no - b.no }); //sorting
-$("#res2").text("The words sorted by their frequency: ");
-for(z=0; z<objarr.length; z++) {
-                $("#res2").append(objarr[z].no+" "+objArr[z].name);
-}
+wordArr.sort(function(a,b){ return a.count - b.count })
+var result = wordArr.reduce(function(a,v){ return a +=  
+"<span>Word: </span>" +
+"<span> " + v.word + " </span>" +
+"<span>       Count: </span>" + 
+"<span> " + v.count + " </span><br />"
+}, "")
+			
+$("#res2").html(result);
+		
 }
 r.readAsText(f);
 } else {
@@ -1008,22 +988,21 @@ $("#fileinput2").change(wordfreq);
                 </div>
                 <div class="col-sm-7 margin-small">
                     <pre class="brush: js text">
-                        function findWord(evt) {
+function findWord(evt) {
 var f = evt.target.files[0]; 
 if (f) {
 var r = new FileReader();
 r.onload = function(e) { 
 var fileContent=r.result;
-var wordArr=[];
-wordArr=fileContent.split(/[\s,()']+/);
+var wordArr=fileContent.split(/[\s,()']+/);
 var str = document.getElementById('myWord').value;
 var ctr=0;
-for (i=0;i<wordArr.length; i++) {
-if (wordarr[i] === str) {
+for (i in wordArr) {
+if (wordArr[i] === str) {
 ctr++;
 }
 }
-$("#res3").text("the number of occurances of the word '"+str+"' in the file '"+f.name+"' is "+ctr);
+$("#res3").text("The number of occurances of the word '"+str+"' in the file '"+f.name+"' is "+ctr);
 }
 r.readAsText(f);
 } else {
@@ -1049,10 +1028,9 @@ function findLongestWord(evt) {
 
 		r.onload = function(e) {
 			var fileContent=r.result;
-			var wordArr=[];
+			var wordArr=fileContent.split(/[\s,()']+/);
 			var big=" ";
-			wordArr=fileContent.split(/[\s,()']+/);
-			for (i=0;i<wordArr.length; i++) {
+			for (i in wordArr) {
 				big=wordArr[i].length > big.length ? wordArr[i]:big;
 			}
 			$("#res").text("The longest word in '"+f.name+"' is '"+big+"'.");
@@ -1080,22 +1058,22 @@ function filterLongWords(evt) {
 			var bigArr = [];
 			var chk = false;
 			var num = document.getElementById('numlw').value;
-			for (i=0;i<wordArr.length; i++) {
+			for (i in wordArr) {
 				if (wordArr[i].length > num) {
 					chk=false;
-					for (j=0; j<bigArr.length; j++) {
+					for (j in bigArr) {
 						if (wordArr[i] === bigArr[j]) {
 							chk = true;
 						}
 					}
 					if (chk === false) {
-					bigArr[bigArr.length]=wordArr[i];
+					bigArr.push(wordArr[i]);
 					}
 				}
 			}
 			
-			$("#reslw").text("the words longer than "+num+" are ");
-            for (j=0; j<bigArr.length; j++) {
+			$("#reslw").text("The words longer than "+num+" are ");
+            for (j in bigArr) {
 			    $("#reslw").append(bigArr[j]+", ");
 			}
 		}
@@ -1116,37 +1094,30 @@ function wordFreq(evt) {
 		var r = new FileReader();
         r.onload = function(e) {
 			var fileContent=r.result;
-			var wordArr=[];
-			wordArr=fileContent.split(/[\s,()']+/);
-			var uniqueArr = [];
-			var chk = false;
-			for (i=0;i<wordArr.length; i++) { //creting a unique array
-				chk=false;
-				for (j=0; j<uniqueArr.length; j++) {
-					if (wordArr[i] === uniqueArr[j]) {
-						chk = true;
-					}
-				}
-				if (chk === false) {
-					uniqueArr[uniqueArr.length]=wordArr[i];
-					}
-				}
-			var objArr=[];
-			for (k=0; k<uniqueArr.length; k++) { // attaching a counter too each unique word.
-				var ctr=0;
-				for (l=0; l<wordArr.length; l++) {
-					if(uniqueArr[k] === wordArr[l]) {
-						ctr++;
-					}
-				}
-				objArr.push({no: ctr, name:uniqueArr[k]})
-				console.log(objArr[k].no+"  "+objArr[k].name+"  "+k);
+			var wordArr=fileContent.split(/[\s,()']+/);
+			var wordDict = {}
+			for(var i in wordArr)
+			{
+			    if( wordDict[ wordArr[i] ] )
+			        wordDict[ wordArr[i] ]++;
+			    else
+			        wordDict[ wordArr[i] ] = 1;
 			}
-			objArr = objArr.sort(function(a,b){ return a.no - b.no }); //sorting
-			$("#res2").text("The words sorted by their frequency: ");
-			for(z=0; z<objArr.length; z++) {
-				$("#res2").append(objArr[z].no+" "+objArr[z].name+",  ");
+			wordArr = [];
+			for(var key in wordDict)
+			{
+			    wordArr.push({ word: key, count: wordDict[key] })
 			}
+			wordArr.sort(function(a,b){ return a.count - b.count })
+			var result = wordArr.reduce(function(a,v){ return a +=  
+				"<span>Word: </span>" +
+				"<span> " + v.word + " </span>" +
+				"<span>       Count: </span>" + 
+				"<span> " + v.count + " </span><br/>"
+			}, "")
+			
+			$("#res2").html(result);
+			
 		}
 
 		r.readAsText(f);
@@ -1164,11 +1135,10 @@ function findWord(evt) {
 		var r = new FileReader();
 		r.onload = function(e) {
 			var fileContent=r.result;
-			var wordArr=[];
-			wordArr=fileContent.split(/[\s,()']+/);
+			var wordArr=fileContent.split(/[\s,()']+/);
 			var str = document.getElementById('myWord').value;
 			var ctr=0;
-			for (i=0;i<wordArr.length; i++) {
+			for (i in wordArr) {
 				if (wordArr[i] === str) {
 					ctr++;
 				}
